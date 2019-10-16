@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'myinsta',
+
     'bootstrap3',
     'myinsta.apps.MyinstaConfig',
     'django.contrib.admin',

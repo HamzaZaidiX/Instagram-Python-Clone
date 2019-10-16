@@ -19,7 +19,7 @@ class Image(models.Model):
         return self.name
 
 class Comments(models.Model):
-    comments=models.TextField(max_length=30) 
+    comments=models.CharField(max_length=30) 
 
     def __str__(self):
         return self.comments

@@ -25,15 +25,18 @@ My project used:
 -CSS
 -bootstrap and python languages.
 
-##Code scaffolding
+## Code scaffolding
 
 To access my application a user must run python3.6 manage.py runserver.
 
-##Support and contact details
-If you encount any problem please let me know.below is my email ##E-mail:anithaumuhire@gmail.com 
-##https://github.com/Anitha987/AnQuote-app.git
+## Support and contact details
+If you encount any problem please let me know.below is my email 
+## E-mail:anithaumuhire@gmail.com 
 
-##Build
+below is the link ofmy application 
+## https://github.com/Anitha987/Instagram
+
+## Build
 
 Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
 

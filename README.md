@@ -1,15 +1,15 @@
 # Instagram
-###{Instagram-Project}
+## {Instagram-Project}
 
-##Description 
+## Description 
 This is a  personal gallery application where you display your photos for others to see.
 
 
-##Development server
+## Development server
 
 Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automatically reload if you change any of the source files. 
 
-##Setup/Installation Requirements
+## Setup/Installation Requirements
 
  My end user must have chrome must have: 
  -visual code studio for writing your codes
@@ -18,7 +18,7 @@ Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automa
  -Github for hosting the project
  -and finally Heroku for deploying
 
-##Technologies Used 
+## Technologies Used 
 
 My project used:
 -HTML

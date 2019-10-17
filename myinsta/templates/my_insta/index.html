@@ -1,9 +1,10 @@
-% block content %} 
+{% load bootstap %}
+{% block content %} 
 {{ block.super}}
 
 <div class="container">
 
-  <!-- Looping through myinsta   -->
+  <!-- Looping through myinsta -->
   {% for images in myinsta %}
 
   <div class="row">
@@ -16,7 +17,7 @@
 
   {% empty %}
   <div class="row">
-    <h2 class="text-center">There No News Items</h2>
+    <h2 class="text-center">There are no images</h2>
   </div>
   {% endfor %}
 

@@ -1,4 +1,4 @@
-Instagram
+# Instagram
 ###{Instagram-Project}
 
 ##Description 
@@ -20,14 +20,18 @@ Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automa
 
 ##Technologies Used 
 
-My project used HTML,CSS,bootstrap and python languages.
+My project used:
+-HTML
+-CSS
+-bootstrap and python languages.
 
 ##Code scaffolding
 
 To access my application a user must run python3.6 manage.py runserver.
 
- ##Support and contact details
-  If you encount any problem please let me know.below is my email ##E-mail:anithaumuhire@gmail.com ##https://github.com/Anitha987/AnQuote-app.git
+##Support and contact details
+If you encount any problem please let me know.below is my email ##E-mail:anithaumuhire@gmail.com 
+##https://github.com/Anitha987/AnQuote-app.git
 
 ##Build
 

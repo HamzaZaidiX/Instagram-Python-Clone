@@ -2,7 +2,7 @@
 ## {Instagram-Project}
 
 ## Description 
-This is a  personal gallery application where you display your photos for others to see.
+This is an instagram project where you ha .
 
 
 ## Development server

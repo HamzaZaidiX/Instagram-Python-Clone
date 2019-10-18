@@ -1,9 +1,10 @@
 from django.conf.urls import url
-from django.contrib.auth import views 
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views 
 
 urlpatterns = [
-    url(r'^index/$',views.index,name='insta')
-    url(r'^accounts/', include('registration.backends.simple.urls')), 
+    url(r'^index/$',views.index,name='insta'),
 ]    
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

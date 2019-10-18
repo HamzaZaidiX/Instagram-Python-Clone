@@ -35,10 +35,6 @@ class Comments(models.Model):
         return self.comments
        
 
-class Comments(models.Model):
-    comments=models.CharField(max_length=30) 
-
-    def __str__(self):
-        return self.comments       
+      
 
      

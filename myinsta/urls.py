@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from . import views 
 
 urlpatterns = [
-    url(r'^index/$',views.index,name='insta'),
+    url('^$',views.index,name='insta'),
 ]    
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

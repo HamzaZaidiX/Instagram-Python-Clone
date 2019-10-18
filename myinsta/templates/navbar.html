@@ -6,23 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar " style="background-color:white">
+  <div class="container-fluid" >
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'well' %}" style="text-align:center">Instagram</a>
+      <a class="navbar-brand" href="{% url 'well' %}" style="font-family: inherit" >Instagram</a>
     </div>
   </div>
   <!--The search form above-->
   <div class="col-sm-6 col-md-6">
+    <img src= >
+
+    </div>
     {% if user.is_authenticated %}
-    <ul>
+    <!-- <ul>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
                   <span class="caret"></span>
               </a>
         <ul class="dropdown-menu" role="menu">
           <li>
-            <a href="{%url 'well' %}">Home</a>
+            <a href="{% url 'well' %}">Home</a>
           </li>
          
           <li>
@@ -34,7 +37,7 @@
           </li>
         </ul>
       </li>
-    </ul>
+    </ul> -->
     {% else %}
     <li>
       <a class='btn btn-default' href="/accounts/login">Login</a>

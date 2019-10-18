@@ -1,0 +1,15 @@
+{%extends 'my_insta/base.html'%} 
+{% load bootstrap3 %}
+<!-- Some content here-->
+
+<!-- Looping through news end   -->
+<div class="container-fluid">
+
+  <form  action="{%url 'insta'%}" method="post">
+    {%csrf_token%}
+
+    {% bootstrap_form letterForm layout='inline' %}
+    <input type="submit" value="Subscribe">
+  </form>
+
+</div>

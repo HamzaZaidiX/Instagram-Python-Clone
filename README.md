@@ -2,7 +2,7 @@
 ## {Instagram-Project}
 
 ## Description 
-This is an instagram project where you ha .
+
 
 
 ## Development server

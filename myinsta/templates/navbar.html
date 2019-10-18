@@ -9,7 +9,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url'insta' %}">Instagram</a>
+      <a class="navbar-brand" href="{% url 'well' %}">Instagram</a>
     </div>
   </div>
   <!--The search form above-->
@@ -22,11 +22,15 @@
               </a>
         <ul class="dropdown-menu" role="menu">
           <li>
-            <a href="{%url 'insta'%}">Home</a>
+            <a href="{%url 'well' %}">Home</a>
           </li>
+          <!-- <li>
+              <a href="{%url ''%}">Create Article</a>
+            </li> -->
           <li>
             <a href="/accounts/password/change">Change Password</a>
           </li>
+
           <li>
             <a href="/logout">Logout</a>
           </li>

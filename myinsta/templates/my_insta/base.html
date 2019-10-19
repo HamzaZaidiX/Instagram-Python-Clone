@@ -10,12 +10,13 @@
 
   {%if title%}
 
-  <title>{{title}}</title>
-
-  {%endif%}
+  <title>Instagram - {{title}}</title>
+  {% else %}
+  <title>Instagram </title>
+  {% endif %}
 
   {% block styles %}
-    {% bootstrap_css %}
+  {% bootstrap_css %}
   {% endblock %}
 
 </head>
@@ -23,7 +24,8 @@
 <body>
   {% include "navbar.html"%}
 
-  {% block content %}  {%endblock%}
+  {% block content %} 
+  {%endblock%}
 
 
   {% block scripts %}

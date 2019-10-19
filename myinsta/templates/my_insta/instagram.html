@@ -5,7 +5,7 @@
 <!-- Looping through news end   -->
 <div class="container-fluid">
 
-  <form  action="{%url 'insta'%}" method="post">
+  <form  action="{% url 'insta' %}" method="post">
     {%csrf_token%}
 
     {% bootstrap_form letterForm layout='inline' %}

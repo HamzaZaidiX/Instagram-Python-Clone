@@ -1,65 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-  
-<nav class="navbar " style="background-color:white">
-  <div class="container-fluid" >
-    <div class="navbar-header">
-      <!-- <a class="navbar-brand" href="{% url 'well' %}" style="font-family: inherit" >Instagram</a> -->
-      <div class="cat">
-      <a href="/">
-        <img src="../../instagram/static/images/instagram.png">
-      </a>
-      </div>
+{% load bootstrap3 %} 
+{% block content %}
 
-      <div class="put">
-      <a href="/">
-        <img src="../../instagram/static/images/insta-name.png">
-      </a>
-     </div>
-    </div>
-  </div>
 
-  <!-- <p style="padding:left"><span class="glyphicon glyphicon-user"></span></p>     -->
- 
-  <!--The search form above-->
-  <div class="col-sm-6 col-md-6">
-    </div>
-    {% if user.is_authenticated %}
-    <!-- <ul>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-                  <span class="caret"></span>
-              </a>
-        <ul class="dropdown-menu" role="menu">
-          <li>
-            <a href="{% url 'well' %}">Home</a>
-          </li>
-         
-          <li>
-            <a href="/accounts/password/change">Change Password</a>
-          </li>
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+       
+            <!-- Brand and toggle get grouped for better mobile display -->
 
-          <li>
-            <a href="/logout">Logout</a>
-          </li>
-        </ul>
-      </li>
-    </ul> -->
-    {% else %}
-    <li>
-      <a class='btn btn-default' href="/accounts/login">Login</a>
-    </li>
+        
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                </button>
+            
+                <!-- Instagram Left images on nav bar -->
+                <div class="panel-heading">
+                    <div class="col-md-6">
+                        <a href="/">
+                          <img id="panelpic" src="../../instagram/static/images/instagram.png" alt="instagram logo on nav-bar " style="width:53px; height:30px;margin-top:5px;margin-left:26px;border-right:1px solid;padding-right: 23px; ">
+                        </a>
+                    </div>
+                </div>
+            
+            
+                <div class="homenav">
+                    <div class="col-md-6">
+                        <a href="/">
+                            <img src="../../instagram/static/images/insta-name.png" alt="Instagram name on nav-bar " style="width:120px; height:30px; margin-left: 50px;">
+                        </a>
+                    </div>
+                </div>
+            
+            
+                <div class="center">
+                    <input style="height:23px;width:200px;margin-top:6px;margin-left:5px" type="text" class="input-sm form-control" name="search-form"
+                        placeholder="  Search  ">
+                </div>
+            </div>
+            
+            </nav>
+            <ul>
+              <li class="dropdown">
+                <!-- <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                          <span class="caret"></span>
+                      </a> -->
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{%url 'well'%}">Home</a>
+                  </li>
+                  <li>
+                    <a href="{%url 'new_post'%}">Create Article</a>
+                  </li>
+                  <li>
+                    <a href="/accounts/password/change">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            </div>
+            
 
-    {% endif %}
-  </div>
-  
-</nav>
-</body>
-</html>
+
+
+
+
+
+
+{% endblock %}

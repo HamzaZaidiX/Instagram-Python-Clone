@@ -1,13 +1,22 @@
 from django.shortcuts import render
-from .forms import myForm
+from .forms import newPostForm
 
 # Create your views here.
 def well(request):
     # images=Image.objects.all()
+    return render(request,'my_insta/index.html')
+
+@login_required(login_url='/accounts/login/')
+def new_post(request):
+    current_user = request.user
     if request.method == 'POST':
-        form = myForm(request.POST)
+        form = newPostForm(request.POST, request.FILES)
         if form.is_valid():
-            print('valid')
+            image = form.save(commit=False)
+            image.user = current_user
+            image.save()
+        return redirect('/')
+
     else:
-        form = myForm()
-    return render(request,'my_insta/index.html',{"letterForm":form})
+        form = newPostForm()
+    return render(request, 'new_post.html', {"form": form})    

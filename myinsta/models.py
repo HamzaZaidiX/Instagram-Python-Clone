@@ -12,6 +12,7 @@ class Image(models.Model):
     image=models.ImageField(upload_to = 'pictures',null= True)
     name=models.CharField(max_length=30)
     caption=models.CharField(max_length=30) 
+    post = HTMLField()
     profile=models.ForeignKey(Profile,null= True)
     comments=models.CharField(max_length=30)
 

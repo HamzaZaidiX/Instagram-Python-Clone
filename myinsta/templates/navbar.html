@@ -1,7 +1,19 @@
 {% load bootstrap3 %} 
 {% block content %}
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% block styles %} 
+{% bootstrap_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+</head>
+<body>
+  
 <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
        
@@ -15,30 +27,33 @@
             
                 <!-- Instagram Left images on nav bar -->
                 <div class="panel-heading">
-                    <div class="col-md-6">
-                        <a href="/">
-                          <img id="panelpic" src="../../instagram/static/images/instagram.png" alt="instagram logo on nav-bar " style="width:53px; height:30px;margin-top:5px;margin-left:26px;border-right:1px solid;padding-right: 23px; ">
-                        </a>
-                    </div>
+                  <div class="col-md-6">
+                      <a href="/">
+                        <i class="fa fa-instagram" style="font-size:48px;color: black"></i>
+                      </a>
+                  </div>
                 </div>
             
             
                 <div class="homenav">
                     <div class="col-md-6">
                         <a href="/">
-                            <img src="../../instagram/static/images/insta-name.png" alt="Instagram name on nav-bar " style="width:120px; height:30px; margin-left: 50px;">
+                          <p style="font-size:xx-large;font-family:pattaya;color: black">Instagram</p>
                         </a>
                     </div>
                 </div>
             
             
                 <div class="center">
-                    <input style="height:23px;width:200px;margin-top:6px;margin-left:5px" type="text" class="input-sm form-control" name="search-form"
-                        placeholder="  Search  ">
+                  <div class="col-md-6">
+                  <input style="height:23px;width:200px;margin-top:6px;margin-left:5px" type="text" class="input-sm form-control" name="search-form"
+                      placeholder="  Search  ">
+                  </div>
                 </div>
-            </div>
             
-            </nav>
+           
+            <div class="col-sm-6 col-md-6">
+            {% if user.is_authenticated %}
             <ul>
               <li class="dropdown">
                 <!-- <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
@@ -49,7 +64,7 @@
                     <a href="{%url 'well'%}">Home</a>
                   </li>
                   <li>
-                    <a href="{%url 'new_post'%}">Create Article</a>
+                    <a href="{%url 'new_post'%}">Create new post</a>
                   </li>
                   <li>
                     <a href="/accounts/password/change">Change Password</a>
@@ -60,13 +75,15 @@
                 </ul>
               </li>
             </ul>
-            </div>
-            
+            {% else %}
+            <li>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+            </li>
 
-
-
-
-
-
-
+            {% endif %}
+          </div>
+        </nav>
+          
 {% endblock %}
+</body>
+</html>

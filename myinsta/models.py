@@ -7,7 +7,7 @@ class Profile(models.Model):
     biography=models.TextField(max_length=60)
  
     def __str__(self):
-        return self.profile
+        return self.photo
 
 class Image(models.Model):
     image=models.ImageField(upload_to = 'pictures',null= True)

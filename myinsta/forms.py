@@ -1,10 +1,18 @@
 from django import forms
 from .models import Image
 
-class newPostForm(forms.Form):
+class newPostForm(forms.ModelForm):
    class Meta:
         model = Image
-        exclude = ['editor', 'pub_date']
-        widgets = {
-            'tags': forms.CheckboxSelectMultiple(),
-        }
+        exclude = ['profile']
+        # widgets = {
+        #     'tags': forms.CheckboxSelectMultiple(),
+        # }
+
+class ProfileForm(forms.ModelForm):
+   class Meta:
+        model = Image
+        exclude = ['profile']
+        # widgets = {
+        #     'tags': forms.CheckboxSelectMultiple(),
+        # }

@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     url('^$',views.well,name='well'),
-    # url('^$',views.new_post,name='new_post'),
-
+    url('^new/post$',views.new_post,name='new_post'),
+    url(r'^accounts/profileform', views.profile_form, name='profileform'),
 ]

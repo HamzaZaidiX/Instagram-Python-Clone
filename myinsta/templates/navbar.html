@@ -15,72 +15,80 @@
 <body>
   
 <div class="container">
+  <div class="row">
     <nav class="navbar navbar-default navbar-fixed-top">
        
-            <!-- Brand and toggle get grouped for better mobile display -->
+          <!-- Brand and toggle get grouped for better mobile display -->
 
-        
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                </button>
-            
-                <!-- Instagram Left images on nav bar -->
-                <div class="panel-heading">
+      
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false">
+              </button>
+          
+              <!-- Instagram Left images on nav bar -->
+              <div class="panel-heading">
+                <div class="col-md-6">
+                    <a href="/">
+                      <i class="fa fa-instagram" style="font-size:48px;color: black"></i>
+                    </a>
+                </div>
+              </div>
+          
+          
+              <div class="homenav">
                   <div class="col-md-6">
                       <a href="/">
-                        <i class="fa fa-instagram" style="font-size:48px;color: black"></i>
+                        <p style="font-size:xx-large;font-family:pattaya;color: black">Instagram</p>
                       </a>
                   </div>
+              </div>
+          
+          
+              <div class="center">
+                <div class="col-md-6">
+                <input style="height:23px;width:200px;margin-top:6px;margin-left:5px" type="text" class="input-sm form-control" name="search-form"
+                    placeholder="  Search  ">
                 </div>
-            
-            
-                <div class="homenav">
-                    <div class="col-md-6">
-                        <a href="/">
-                          <p style="font-size:xx-large;font-family:pattaya;color: black">Instagram</p>
-                        </a>
-                    </div>
-                </div>
-            
-            
-                <div class="center">
-                  <div class="col-md-6">
-                  <input style="height:23px;width:200px;margin-top:6px;margin-left:5px" type="text" class="input-sm form-control" name="search-form"
-                      placeholder="  Search  ">
-                  </div>
-                </div>
-            
-           
-            <div class="col-sm-6 col-md-6">
-            {% if user.is_authenticated %}
-            <ul>
-              <li class="dropdown">
-                <!-- <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-                          <span class="caret"></span>
-                      </a> -->
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="{%url 'well'%}">Home</a>
-                  </li>
+              </div>
+          
+          
+          <div class="col-sm-6 col-md-6" style="margin-right: 100%">
+          {% if user.is_authenticated %}
+          <ul>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                        <span class="caret"></span>
+                    </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a role="button" href="{% url 'well' %}">Home</a>
+                </li>
                 
-                  <li>
-                    <a href="/accounts/password/change">Change Password</a>
-                  </li>
-                  <li>
-                    <a href="/logout">Logout</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            {% else %}
-            <li>
-              <a class='btn btn-default' href="/accounts/login">Login</a>
+                <li>
+                  <a role="button" href="{%url 'new_post'%}">New post</a>
+                </li>   
+                <li>
+                  <a href="/accounts/password/change">Change Password</a>
+                </li>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+              </ul>
             </li>
+          </ul>
+          {% else %}
+          <li>
+            <a class='btn btn-default' href="/accounts/login">Login</a>
+          </li>
 
-            {% endif %}
-          </div>
+          {% endif %}
+        </div>
+        
+
         </nav>
+        </div>
+        </div>
           
 {% endblock %}
 </body>

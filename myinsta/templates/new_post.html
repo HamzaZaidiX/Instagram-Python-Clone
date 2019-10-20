@@ -1,4 +1,4 @@
-{% load bootstrap3 %}
+{% load bootstrap3 %} 
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -10,15 +10,15 @@
   <title>New Post</title>
   {{form.media}}
 
-{% block styles %} 
-{% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+{% block styles %}
+ {% bootstrap_css %}
+  <!-- <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %} -->
 
 </head>
 
 <body>
 
-  <form  action="{% url'new_post' %}" method="post" enctype="multipart/form-data">
+  <form  action="{% url 'new_post' %}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}
@@ -27,7 +27,8 @@
 
    {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
+  {% bootstrap_javascript %}
+  {% endblock %}
 
 </body>
 

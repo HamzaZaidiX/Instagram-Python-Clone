@@ -4,16 +4,9 @@
 
 <br><br><br><br><br>
 <div class="container"> 
+  <!--displaying images in myinsta -->
+  <img src="{{images.profile.url}}" class="img-responsive" alt="Image">
   
-  <!-- Looping through myinsta -->
-  {% for cat in profile %}
-
-    <!--displaying images in myinsta -->
-    <img src="{{cat.photo.url}}" class="img-responsive" alt="Image">
-    
-  
-  {% endfor %}
+  <button type="button" class="btn btn-default"><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px">Edit Profile</a></button>
 </div>
-
-
 {% endblock %}

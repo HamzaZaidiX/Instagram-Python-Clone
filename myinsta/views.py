@@ -34,7 +34,7 @@ def profile_form(request):
            profile = form.save(commit=False)
            profile.user = current_user
            profile.save()
-       return redirect('profileform')
+       return redirect('profile')
    else:
        form = ProfileForm()
    return render(request, 'my_insta/profile.html', {"form": form})
@@ -43,9 +43,8 @@ def profile_form(request):
 @login_required(login_url='/accounts/login/')
 def profile(request,username=None):
    current_user = request.user
-   profile=Profile.objects.get(user=current_user)
    if not username:
        username=request.user.username
-       images=Profile.objects.filter(name=username)
-   return render(request, 'my_insta/new_profile.html', {"profile": profile})
+       images=Profile.objects.filter(photo=username).first()
+   return render(request, 'my_insta/new_profile.html', {"profile": images,"current_user":current_user})
   

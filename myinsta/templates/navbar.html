@@ -6,25 +6,26 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
 <body>
+   <br><br><br>
    <nav class="navbar navbar-default navbar-fixed-top">
        <div class="container-fluid">
            <div class="navbar-header">
                <a  class="navbar-brand" style="color: rgb(31, 30, 30);" class="navbar-brand" href="{% url 'well' %}"><ul>
-                   <i class="fa fa-instagram" aria-hidden="true" style="font-size:38px;"></i>
+                   <i class="fa fa-instagram" aria-hidden="true" style="font-size:28px;"></i>
                </ul></a>
                <a style="color: rgb(27, 27, 27);font-family: 'Leckerli One', cursive;font-size:38px;" class="navbar-brand" href="{% url 'well' %}" >| Instagram</a>
            </div>
            <div class=" col-md-4  navbar-center">
                <input class="form-control" type="text" placeholder="Search" name="picture">
            </div>
-           <div class="col-md-2">
+           <div class="col-md-4">
                <ul>
-                   <a href="{% url 'well' %}"><i class="fa fa-home" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);padding-right: 50px"></i></a>
-                   <a href="{% url 'well' %}"><i class="fa fa-heart-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:50px"></i></a>
+                   <a href="{% url 'well' %}"><i class="fa fa-home" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);padding-right: 40px"></i></a>
+                   <a href="{% url 'well' %}"><i class="fa fa-heart-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:40px"></i></a>
 
-                   <a href="{% url 'new_post' %}"><i class="fa fa-camera" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:50px"></i></a>
-                   <a href="{% url 'profileform' %}"><i class="fa fa-user-circle-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:50px"></i></a>
-                   <button   type="button" class="btn btn-secondary" ><a href="/logout" style="font-size:16px;color: rgb(31, 30, 30);">Logout</a></button>
+                   <a href="{% url 'new_post' %}"><i class="fa fa-camera" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:40px"></i></a>
+                   <a href="{% url 'profile' %}"><i class="fa fa-user-circle-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);padding-right:40px"></i></a>
+                   <button type="button" class="btn btn-default" ><a href="/logout" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px">Logout</a></button>
                     
                </ul>
            </div>

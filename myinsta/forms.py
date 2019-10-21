@@ -1,5 +1,5 @@
 from django import forms
-from .models import Image
+from .models import Image,Profile
 
 class newPostForm(forms.ModelForm):
    class Meta:
@@ -11,8 +11,8 @@ class newPostForm(forms.ModelForm):
 
 class ProfileForm(forms.ModelForm):
    class Meta:
-        model = Image
-        exclude = ['profile']
+        model = Profile
+        exclude = ['']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }

@@ -1,6 +1,7 @@
 {%extends 'my_insta/base.html'%}
 {% load bootstrap3 %}
 {% load staticfiles %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
 </head>
 <body>
- {% block content %}
+ <br><br><br><br><br><br>
  <form  action="{% url 'profileform' %}" method="post" enctype="multipart/form-data">
    {%csrf_token%}
    {% bootstrap_form form layout='inline' %}

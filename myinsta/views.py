@@ -41,8 +41,11 @@ def profile_form(request):
 
 
 @login_required(login_url='/accounts/login/')
-def profile(request):
+def profile(request,username=None):
    current_user = request.user
    profile=Profile.objects.get(user=current_user)
-   return render(request, 'my_insta/profile.html', {"profile": profile})
+   if not username:
+       username=request.user.username
+       images=Profile.objects.filter(name=username)
+   return render(request, 'my_insta/new_profile.html', {"profile": profile})
   

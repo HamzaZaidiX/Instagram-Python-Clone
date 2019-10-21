@@ -5,15 +5,16 @@
 <br><br><br><br><br>
 <div class="container"> 
   
-  
-  <!-- Looping through myinsta -->
-  {% for insta in pic_images %}
+  <div class="w3-card-4 card-body" style="width:50%;margin-left: 20%;">
+    <!-- Looping through myinsta -->
+    {% for insta in pic_images %}
 
-    <!--displaying images in myinsta -->
-    <img src="{{insta.image.url}}" class="img-responsive" alt="Image">
-    <h1><strong>{{insta.caption }}</strong></h1>
-  
-  {% endfor %}
+      <!--displaying images in myinsta -->
+      <img src="{{insta.image.url}}" class="img-responsive" alt="Image">
+      <h1><strong>{{insta.caption }}</strong></h1>
+    
+    {% endfor %}
+  </div>
 </div>
 
 

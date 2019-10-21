@@ -6,9 +6,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
-def well(request):
-    images=Image.objects.all()
-    return render(request,'my_insta/index.html')
+def welc(request):
+    pic_images=Image.objects.all()
+    return render(request,'my_insta/index.html',{"pic_images":pic_images})
 
 
 def new_post(request):

@@ -1,95 +1,47 @@
-{% load bootstrap3 %} 
-{% block content %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{% block styles %} 
-{% bootstrap_css %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-{% endblock %}
-</head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
 <body>
-  
-<div class="container">
-  <div class="row">
-    <nav class="navbar navbar-default navbar-fixed-top">
-       
-          <!-- Brand and toggle get grouped for better mobile display -->
-
-      
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                  aria-expanded="false">
-              </button>
-          
-              <!-- Instagram Left images on nav bar -->
-              <div class="panel-heading">
-                <div class="col-md-6">
-                    <a href="/">
-                      <i class="fa fa-instagram" style="font-size:48px;color: black"></i>
-                    </a>
-                </div>
-              </div>
-          
-          
-              <div class="homenav">
-                  <div class="col-md-6">
-                      <a href="/">
-                        <p style="font-size:xx-large;font-family:pattaya;color: black">Instagram</p>
-                      </a>
-                  </div>
-              </div>
-          
-          
-              <div class="center">
-                <div class="col-md-6">
-                <input style="height:23px;width:200px;margin-top:6px;margin-left:5px" type="text" class="input-sm form-control" name="search-form"
-                    placeholder="  Search  ">
-                </div>
-              </div>
-          
-          
-          <div class="col-sm-6 col-md-6" style="margin-right: 100%">
-          {% if user.is_authenticated %}
-          <ul>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
-                        <span class="caret"></span>
-                    </a>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <a role="button" href="{% url 'well' %}">Home</a>
-                </li>
-                
-                <li>
-                  <a role="button" href="{%url 'new_post'%}">New post</a>
-                </li>   
-                <li>
-                  <a href="/accounts/password/change">Change Password</a>
-                </li>
-                <li>
-                  <a href="/logout">Logout</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          {% else %}
-          <li>
-            <a class='btn btn-default' href="/accounts/login">Login</a>
-          </li>
-
-          {% endif %}
-        </div>
-        
-
-        </nav>
-        </div>
-        </div>
-          
-{% endblock %}
+   <nav class="navbar navbar-default navbar-fixed-top">
+       <div class="container-fluid">
+           <div class="navbar-header">
+               <a  class="navbar-brand" style="color: rgb(31, 30, 30);" class="navbar-brand" href="{% url 'well' %}"><ul>
+                   <i class="fa fa-instagram" aria-hidden="true" style="font-size:38px;"></i>
+               </ul></a>
+               <a style="color: rgb(27, 27, 27);font-family: 'Leckerli One', cursive;font-size:38px;" class="navbar-brand" href="{% url 'well' %}" >| Instagram</a>
+           </div>
+           <div class=" col-md-4  navbar-center">
+               <input class="form-control" type="text" placeholder="Search" name="picture">
+           </div>
+           <div class="col-md-4">
+               <ul>
+                   <a href="{% url 'well' %}"><i class="fa fa-home" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);"></i></a>
+                   <a href="{% url 'well' %}"><i class="fa fa-heart-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);"></i></a>
+                   <a href="#" class="dropdown dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);"></i>
+                               <span class="caret"></span>
+                           </a>
+                       <ul class="dropdown-menu"  role="menu" style="float: right;">
+                           <li>
+                               <a href="{%url 'profileform'%}" style="font-size:16px;color: rgb(31, 30, 30);">Profile</a>
+                           </li>
+                           <li>
+                               <a href="{%url 'new_post'%}" style="font-size:16px;color: rgb(31, 30, 30);">upload image</a>
+                           </li>
+                           <li>
+                               <a href="/accounts/password/change" style="font-size:16px;color: rgb(31, 30, 30);">Change Password</a>
+                           </li>
+                           <hr>
+                           <li>
+                               <a href="/logout" style="font-size:16px;color: rgb(31, 30, 30);">Logout</a>
+                           </li>
+                       </ul>
+               </ul>
+           </div>
+       </div>
+   </nav>
 </body>
 </html>

@@ -2,24 +2,23 @@
 {% load bootstrap3 %}
 {% block content %} 
 
-
+<br><br><br><br><br>
 <div class="container"> 
   
   <div class="row" >
   <!-- Looping through myinsta -->
-  {% for images in myinsta %}
+  {% for insta in pic_images %}
 
- 
     <!--displaying images in myinsta -->
-    <div class="col-md-4">
-        <img src="{{images.image.url}}" class="img-responsive" alt="Image">
+    <div class="col-md-6">
+        <img src="{{insta.image.url}}" class="img-responsive" alt="Image">
+        {{insta.name}}
     </div> 
 
   </div>
 
-  {% empty %}
   <div class="row">
-    <!-- <h2 class="text-center">no images here!</h2> -->
+
   </div>
   {% endfor %}
 

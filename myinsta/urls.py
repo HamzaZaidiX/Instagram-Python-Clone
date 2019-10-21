@@ -4,7 +4,9 @@ from django.conf.urls.static import static
 from . import views 
 
 urlpatterns = [
-    url('^$',views.well,name='well'),
+    url('^$',views.welc,name='well'),
     url('^new/post$',views.new_post,name='new_post'),
     url(r'^accounts/profileform', views.profile_form, name='profileform'),
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE,null=True)
-    photo = models.ImageField(upload_to = 'photos',null=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    photo = models.ImageField(upload_to = 'photos',null=True,blank=True)
     biography=models.TextField(max_length=60)
     def __str__(self):
         return self.biography

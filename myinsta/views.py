@@ -7,25 +7,11 @@ from django.http import HttpResponse
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def welc(request):
+    current_user=request.user
     pic_images=Image.objects.all()
-    return render(request,'my_insta/index.html',{"pic_images":pic_images})
+    profile=Profile.objects.filter(user=current_user).first()
+    return render(request,'my_insta/index.html',{"pic_images":pic_images,"profile":profile})
 
-
-def new_post(request):
-    current_user = request.user
-    profile=Profile.objects.filter(user=current_user).first
-    if request.method == 'POST':
-        form = newPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            image = form.save(commit=False)
-            image.user = current_user
-            image.profile=profile
-            image.save()
-        return redirect('well')
-
-    else:
-        form = newPostForm()
-    return render(request, 'new_post.html', {"form": form})
 
 @login_required(login_url='/accounts/login/')
 def profile_form(request):
@@ -35,7 +21,7 @@ def profile_form(request):
        if form.is_valid():
            profile = form.save(commit=False)
            profile.user = current_user
-           profile.save()
+        #    profile.save()
        return redirect('profile')
    else:
        form = ProfileForm()
@@ -50,3 +36,18 @@ def profile(request):
     images=Image.objects.filter(user=current_user)
     return render(request, 'my_insta/new_profile.html', {"images":images,"profile":profile})
   
+def new_post(request):
+    current_user = request.user
+    profile=Profile.objects.filter(user=current_user).first
+    if request.method == 'POST':
+        form = newPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.user = current_user
+            image.Profile=profile
+            image.save()
+        return redirect('well')
+
+    else:
+        form = newPostForm()
+    return render(request, 'new_post.html', {"form": form})

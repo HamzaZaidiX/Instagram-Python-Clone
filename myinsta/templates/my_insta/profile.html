@@ -12,16 +12,22 @@
 <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
 </head>
 <body>
+  <div class="container"style="width:50%;height:30%;padding-bottom:20%">
+  <div class="jumbotron"style="width:600px;height:550px">
   <br><br><br><br><br><br>
-  <form  action="{% url 'profileform' %}" method="post" enctype="multipart/form-data">
-    {%csrf_token%}
-    {% bootstrap_form form %}
-    <input type="submit" class="btn btn-success btn-lg" value="Post">
-  </form>
+  <div class="form-group">
+    <form  action="{% url 'profileform' %}" method="post" enctype="multipart/form-data">
+      {%csrf_token%}
+      {% bootstrap_form form %}
+      <input type="submit" class="btn btn-success" value="Post">
+    </form>
+  </div>
     {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %} {% endblock %}
   {% endblock %}
+</div>
+</div>
 </body>
 </html>
 

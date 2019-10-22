@@ -1,15 +1,39 @@
 {% extends 'my_insta/base.html'%}
 {% load bootstrap3 %}
 {% block content %} 
-
+<style>
+  .profile{
+    border-radius: 700px;
+    width: 100px;
+    height: 70px; 
+  }
+</style>
 <br><br><br><br><br>
-<div class="container"> 
-    <div class="w3-card-4 card-body" style="width:30%;margin-left: 20%;border-radius:50%">
+<div class="container" style="text-align: center"> 
+    <div>
       <!--displaying images in myinsta -->
-      <img src="{{profile.photo.url}}" class="img-responsive" alt="Image">
-       <button type="button" class="btn btn-default" ><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px">Edit profile</a></button>
+      <img src="{{profile.photo.url}}" class="profile" >
+    </div>
+       <button type="button" class="btn btn-default" ><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);float:right">Edit profile</a></button>
+   
+
+      
+      
+         
+       {% for insta in images %}
+       <div class="row"style="text-align: center">
+       <div class="col-lg-3">
+       <!--displaying images in myinsta -->
+      
+       <img src="{{insta.image.url}}" style="width:200px;height:200px;" alt="Image"><br> <br>
+      
+       
+       </div>
+      </div> 
+     {% endfor %}
     
-  </div>
+        
+   </div> 
 </div>
 
 

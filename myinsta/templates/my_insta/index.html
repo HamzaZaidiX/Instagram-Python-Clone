@@ -1,18 +1,31 @@
 {% extends 'my_insta/base.html'%}
 {% load bootstrap3 %}
 {% block content %} 
-
+<style>
+  .profile{
+    border-radius: 700px;
+    width: 100px;
+    height: 70px;  
+}
+</style>
 <br><br><br><br><br>
 <div class="container"> 
   
-  <div class="w3-card-4 card-body" style="width:50%;margin-left: 20%;">
+<div>
+  <!-- <a href="{% url 'profile' %}"> GoToProfile</a> -->
+    
+</div>
+  <div class="w3-card-4 card" style="width:50%;margin-left: 20%;">
     <!-- Looping through myinsta -->
     {% for insta in pic_images %}
 
       <!--displaying images in myinsta -->
-      <img src="{{insta.image.url}}" class="img-responsive" alt="Image">
-      <h1><strong>{{insta.caption }}</strong></h1>
-    
+      <img src="{{profile.photo.url}}" class="profile" >
+      <img src="{{insta.image.url}}" class="img-responsive card-body"style="width:90%;height:90%" alt="Image">
+      <p>comment</p>
+      
+      
+    <br><br>
     {% endfor %}
   </div>
 </div>

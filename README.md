@@ -11,18 +11,18 @@ Run python3.6 manage.py. Navigate to http://127.0.0.1:8000/. The app will automa
 ## Setup/Installation Requirements
 
  My end user must have chrome must have: 
- -visual code studio for writing your codes
- -bootstrap for designing your application
- -ubuntu setup.
- -Github for hosting the project
- -and finally Heroku for deploying
+ - visual code studio for writing your codes
+ - bootstrap for designing your application
+ - ubuntu setup.
+ - Github for hosting the project
+ - and finally Heroku for deploying
 
 ## Technologies Used 
 
 My project used:
--HTML
--CSS
--bootstrap and python languages.
+- HTML
+- CSS
+- bootstrap and python languages.
 
 ## Code scaffolding
 

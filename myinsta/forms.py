@@ -4,7 +4,7 @@ from .models import Image,Profile
 class newPostForm(forms.ModelForm):
    class Meta:
         model = Image
-        exclude = ['profile','comments','name']
+        exclude = ['profile','comments','name','user']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }
@@ -12,7 +12,7 @@ class newPostForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
    class Meta:
         model = Profile
-        exclude = ['']
+        exclude = ['user']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }

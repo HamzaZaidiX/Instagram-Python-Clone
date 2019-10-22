@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .forms import newPostForm,ProfileForm
-from .models import Image,Profile
+from .models import Image,Profile,User
 from django.http import HttpResponse
 
 # Create your views here.
@@ -13,11 +13,13 @@ def welc(request):
 
 def new_post(request):
     current_user = request.user
+    profile=Profile.objects.filter(user=current_user).first
     if request.method == 'POST':
         form = newPostForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
             image.user = current_user
+            image.profile=profile
             image.save()
         return redirect('well')
 
@@ -41,10 +43,10 @@ def profile_form(request):
 
 
 @login_required(login_url='/accounts/login/')
-def profile(request,username=None):
-   current_user = request.user
-   if not username:
-       username=request.user.username
-       images=Profile.objects.filter(photo=username).first()
-   return render(request, 'my_insta/new_profile.html', {"profile": images,"current_user":current_user})
+def profile(request):
+    current_user = request.user
+    profile=Profile.objects.filter(user=current_user).first()
+    print(profile)
+    images=Image.objects.filter(user=current_user)
+    return render(request, 'my_insta/new_profile.html', {"images":images,"profile":profile})
   

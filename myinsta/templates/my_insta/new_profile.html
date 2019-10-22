@@ -4,9 +4,13 @@
 
 <br><br><br><br><br>
 <div class="container"> 
-  <!--displaying images in myinsta -->
-  <img src="{{images.profile.url}}" class="img-responsive" alt="Image">
-  
-  <button type="button" class="btn btn-default"><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px">Edit Profile</a></button>
+    <div class="w3-card-4 card-body" style="width:30%;margin-left: 20%;border-radius:50%">
+      <!--displaying images in myinsta -->
+      <img src="{{profile.photo.url}}" class="img-responsive" alt="Image">
+       <button type="button" class="btn btn-default" ><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px">Edit profile</a></button>
+    
+  </div>
 </div>
+
+
 {% endblock %}

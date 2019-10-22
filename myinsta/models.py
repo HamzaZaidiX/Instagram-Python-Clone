@@ -18,6 +18,7 @@ class Image(models.Model):
     profile=models.ForeignKey(Profile,null= True)
     user=models.ForeignKey(User,blank=True,null=True)
     comments=models.CharField(max_length=30)
+    # likes = models.IntegerField(default=0)
 
 
     def __str__(self):

@@ -51,3 +51,10 @@ def new_post(request):
     else:
         form = newPostForm()
     return render(request, 'new_post.html', {"form": form})
+# @login_required(login_url='/accounts/login/')
+# def likes(request,image_id):
+#     likes =1
+#     posted=Image.objects.get(id=image_id)
+#     posted.likes=posted.likes+1
+#     posted.save()
+#     return redirect('well')

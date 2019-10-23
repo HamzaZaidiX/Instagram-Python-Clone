@@ -4,36 +4,38 @@
 <style>
   .profile{
     border-radius: 700px;
-    width: 100px;
-    height: 70px; 
+    width: 210px;
+    height: 200px; 
   }
 </style>
 <br><br><br><br><br>
-<div class="container" style="text-align: center"> 
+ 
+<div class="container" > 
+  <div class="jumbotron">
     <div>
       <!--displaying images in myinsta -->
-      <img src="{{profile.photo.url}}" class="profile" >
-    </div>
-       <button type="button" class="btn btn-default" ><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);float:right">Edit profile</a></button>
-   
+      <img src="{{profile.photo.url}}" class="profile">
+      <br><p style="font-size:xx-large"><strong>{{profile.user}}</strong></p>
 
-      
-      
-         
+      <p style="font-size:large"><strong>{{profile.biography}}</strong></p>
+
+    </div>
+       <button type="button" class="btn btn-default" ><a href="{% url 'profileform' %}" style="font-size:16px;color: rgb(31, 30, 30);float:left;">Edit profile</a></button>
+       <button type="button" class="btn btn-default" ><a href="/logout" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px;float:right;">Logout</a></button>
+       
        {% for insta in images %}
        <div class="row"style="text-align: center">
-       <div class="col-lg-3">
+       <div class="col-lg-12">
        <!--displaying images in myinsta -->
       
-       <img src="{{insta.image.url}}" style="width:200px;height:200px;" alt="Image"><br> <br>
+       <img src="{{insta.image.url}}" style="width:200px;height:200px;border-style:solid" alt="Image"><br> <br>
       
-       
-       </div>
-      </div> 
      {% endfor %}
-    
+    </div>
+  </div> 
         
-   </div> 
+   </div>
+  </div> 
 </div>
 
 

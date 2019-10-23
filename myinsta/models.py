@@ -18,7 +18,13 @@ class Image(models.Model):
     profile=models.ForeignKey(Profile,null= True)
     user=models.ForeignKey(User,blank=True,null=True)
     comments=models.CharField(max_length=30)
-    # likes = models.IntegerField(default=0)
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        images = cls.objects.filter(title__icontains=search_term)
+        return images
+
+   
 
 
     def __str__(self):

@@ -21,7 +21,7 @@ def profile_form(request):
        if form.is_valid():
            profile = form.save(commit=False)
            profile.user = current_user
-        #    profile.save()
+           profile.save()
        return redirect('profile')
    else:
        form = ProfileForm()
@@ -51,10 +51,17 @@ def new_post(request):
     else:
         form = newPostForm()
     return render(request, 'new_post.html', {"form": form})
-# @login_required(login_url='/accounts/login/')
-# def likes(request,image_id):
-#     likes =1
-#     posted=Image.objects.get(id=image_id)
-#     posted.likes=posted.likes+1
-#     posted.save()
-#     return redirect('well')
+
+def search_results(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photos = Image.search_by_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'my_insta/search.html',{"message":message,"photos": searched_photos})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'my_insta/search.html',{"message":message})    
+

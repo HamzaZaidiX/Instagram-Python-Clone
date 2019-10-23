@@ -15,9 +15,24 @@
                </ul></a>
                <a style="color: rgb(27, 27, 27);font-family: 'Leckerli One', cursive;font-size:38px;" class="navbar-brand" href="{% url 'well' %}" >| Instagram</a>
            </div>
-           <div class=" col-md-4  navbar-center">
-               <input class="form-control" type="text" placeholder="Search" name="picture">
-           </div>
+           
+           <div class="col-sm-4  navbar-center">
+
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search image" name="image">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+         
+          
+
+            
            <div class="col-md-4">
                <ul>
                    <a href="{% url 'well' %}"><i class="fa fa-home" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);padding-right: 40px"></i></a>
@@ -25,7 +40,7 @@
 
                    <a href="{% url 'new_post' %}"><i class="fa fa-camera" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:40px"></i></a>
                    <a href="{% url 'profile' %}"><i class="fa fa-user-circle-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);padding-right:40px"></i></a>
-                   <!-- <button type="button" class="btn btn-default" ><a href="/logout" style="font-size:16px;color: rgb(31, 30, 30);margin-right:20px">Logout</a></button> -->
+                  
                     
                </ul>
            </div>

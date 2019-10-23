@@ -4,8 +4,8 @@
 <style>
   .profile{
     border-radius: 700px;
-    width: 100px;
-    height: 70px;  
+    width: 90px;
+    height: 80px;  
 }
 </style>
 <br><br><br><br><br>
@@ -21,9 +21,10 @@
 
       <!--displaying images in myinsta -->
       <img src="{{profile.photo.url}}" class="profile" >
+      <strong>{{insta.user}}</strong>
       <img src="{{insta.image.url}}" class="img-responsive card-body"style="width:90%;height:90%;margin-top:10%" alt="Image">
-      
-      
+      <img  class="fa fa-heart-o" aria-hidden="true" style="font-size:28px;color: rgb(31, 30, 30);;padding-right:40px">
+        
     <br><br>
     {% endfor %}
   </div>

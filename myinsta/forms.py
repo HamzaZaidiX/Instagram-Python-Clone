@@ -12,7 +12,7 @@ class newPostForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
    class Meta:
         model = Profile
-        exclude = ['user']
+        exclude = ['']
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }
